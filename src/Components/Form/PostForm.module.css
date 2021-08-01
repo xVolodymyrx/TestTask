@@ -1,0 +1,41 @@
+.name {
+  margin-top   : 0 auto;
+  margin-bottom: 10px;
+  font-size    : 30px;
+  min-width    : 500px;
+  text-align   : center;
+  box-shadow   : 3px 3px 5px black;
+}
+
+.text {
+  font-size : 30px;
+  min-width : 365px;
+  min-height: 250px;
+  resize    : none;
+  box-shadow: 5px 5px 5px black;
+}
+
+.btn {
+  font-weight: 800;
+  font-size  : 20px;
+  margin     : 10px;
+  padding    : 20px;
+  box-shadow : 5px 5px 5px black;
+  cursor     : pointer;
+}
+
+.btn:hover {
+  background-color: #daa52080;
+}
+
+.form {
+  display       : flex;
+  flex-direction: column;
+}
+
+.error {
+  font-size  : 18px;
+  font-weight: 600;
+  color      : red;
+  text-shadow: 2px 2px 3px black;
+}

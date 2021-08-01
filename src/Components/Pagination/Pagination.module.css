@@ -1,0 +1,21 @@
+.pagination {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: center;
+  align-items    : center;
+
+}
+
+.pageItem {
+  list-style : none;
+  display    : flex;
+  font-weight: 600;
+  color      : black;
+  padding    : 10px;
+  border     : 1px solid black;
+  cursor     : pointer;
+}
+
+.pageItem:hover {
+  background-color: goldenrod;
+}

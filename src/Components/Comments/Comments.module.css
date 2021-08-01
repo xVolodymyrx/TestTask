@@ -1,0 +1,24 @@
+.loading {
+  display   : block;
+  text-align: center;
+}
+
+.commentsList {
+  margin : 10px;
+  padding: 10px;
+}
+
+.listItem {
+  list-style: none;
+}
+
+.authorName {
+  color     : #020080;
+  text-align: center;
+}
+
+.authorThink {
+  color        : #fc0505;
+  text-overflow: ellipsis;
+  width        : 500px;
+}
