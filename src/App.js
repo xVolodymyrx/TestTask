@@ -12,13 +12,13 @@ function App() {
   //=======================================================================================================
 
   //======================            DEFINITION CONDITION           ======================================
-  const [comments, setComments] = useState([]);
-  const [numbPage, setNumbPage] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [currentPage, setCurrentPage] = useState('');
-  const [nextPage, setNextPage] = useState('')
-  const [commentsPerPage, setCommentsPerPage] = useState(10);
-  const [totalComments, setTotalComments] = useState('');
+  const [comments, setComments] = useState([]);                 // all comments
+  const [loading, setLoading] = useState(false);                // preloading
+  const [currentPage, setCurrentPage] = useState('');           // current page
+  const [nextPage, setNextPage] = useState('')                  // next page URL on click button 'Sow more'
+  const [numbPage, setNumbPage] = useState('');                 // last page
+  const [commentsPerPage, setCommentsPerPage] = useState(10);   // how many comments on page
+  const [totalComments, setTotalComments] = useState('');       // total number of comments
 
   // const indexLastComment = currentPage * commentsPerPage;
   // const indexFirstComment = indexLastComment - commentsPerPage;
@@ -29,14 +29,14 @@ function App() {
   //======================           REQUEST ON SERVER           ==========================================
   useEffect(() => {
     const getComments = async () => {
-      setLoading(true);
-      let res = await axios.get(`${baseURL}`);
-      setComments(res.data.data);
-      setCurrentPage(res.data.current_page);
-      setNumbPage(res.data.last_page);
-      // setCommentsPerPage(res.data.per_page);
-      setTotalComments(res.data.total);
-      setLoading(false);
+      setLoading(true);                           // start loading
+      let res = await axios.get(`${baseURL}`);    // fetch on base URL
+      setComments(res.data.data);                 // getting data
+      setCurrentPage(res.data.current_page);      // getting current page number
+      setNumbPage(res.data.last_page);            // getting last page number
+      setCommentsPerPage(res.data.per_page);      // getting amount comments per page
+      setTotalComments(res.data.total);           // getting total number of comments
+      setLoading(false);                          // finish loading
     }
     getComments();
   }, []);
@@ -44,12 +44,12 @@ function App() {
 
   //======================           GET NEXT COMMENTS           ==========================================
   const getNextComments = async () => {
-    let resp = await axios.get(`${baseURL}?page=${currentPage}`);
-    setLoading(true);
-    setComments(resp.data.data);
-    setNextPage(resp.data.next_page_url);
-    setCurrentPage(prevState => ++prevState);
-    setLoading(false);
+    let resp = await axios.get(`${baseURL}?page=${currentPage}`);   // fetch on base URL with arguments
+    setLoading(true);                                               // start loading
+    setComments(resp.data.data);                                    // getting data
+    setNextPage(resp.data.next_page_url);                           // next page URL on click button 'Sow more'
+    setCurrentPage(prevState => ++prevState);                       // change base URL page number and new on argument
+    setLoading(false);                                              // finish loading
   }
   //=======================================================================================================
 

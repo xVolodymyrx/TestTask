@@ -4,8 +4,6 @@ import stylePagination from "../Pagination/Pagination.module.css";
 
 export const Pagination = ({ commentsPerPage, totalComments, setCurrentPage }) => {
   const paginate = (pageNumber) => { setCurrentPage(pageNumber) };
-
-
   const pageNumers = [];
 
   for (let i = 1; i <= Math.ceil(totalComments / commentsPerPage); i++) {
