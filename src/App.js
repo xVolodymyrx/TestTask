@@ -19,6 +19,7 @@ function App() {
   const [numbPage, setNumbPage] = useState('');                 // last page
   const [commentsPerPage, setCommentsPerPage] = useState(10);   // how many comments on page
   const [totalComments, setTotalComments] = useState('');       // total number of comments
+  //=======================================================================================================
 
   // const indexLastComment = currentPage * commentsPerPage;
   // const indexFirstComment = indexLastComment - commentsPerPage;
@@ -76,4 +77,4 @@ function App() {
   );
 }
 export default App;
-//=======================================================================================================
+//=========================================================================================================

@@ -7,12 +7,12 @@ export const PostForm = () => {
   //=========================================================================================================
 
   //======================            DEFINITION CONDITION           ========================================
-  const [nameDirty, setNameDirty] = useState(false);                                        // was the cursor on this input field
-  const [textDirty, setTextDirty] = useState(false);                                        // was the cursor on this input field
-  const [nameError, setNameError] = useState("Поле обязательное для заполнения");           // warning of error
-  const [textError, setTextError] = useState("Поле обязательное для заполнения");           // warning of error
-  const [formValid, setFormValid] = useState(false);                                        // validation 
-  const [data, setData] = useState({                                                        // add needed fields on State
+  const [nameDirty, setNameDirty] = useState(false);                               // was the cursor on this input field
+  const [textDirty, setTextDirty] = useState(false);                               // was the cursor on this input field
+  const [nameError, setNameError] = useState("Поле обязательное для заполнения");  // warning of error
+  const [textError, setTextError] = useState("Поле обязательное для заполнения");  // warning of error
+  const [formValid, setFormValid] = useState(false);                               // validation
+  const [data, setData] = useState({                                               // add needed fields on State
     name: '',
     text: '',
   })
@@ -74,9 +74,9 @@ export const PostForm = () => {
       setTextError("");
     };
   }
-  //=======================================================================================================
+  //=========================================================================================================
 
-  //=============           EXAMINATION CURSOR ON THIS INPUT FIELD           ==============================
+  //=============           EXAMINATION CURSOR ON THIS INPUT FIELD           ================================
   const blurHeandler = (e) => {
     switch (e.target.name) {
       case "name":
@@ -88,9 +88,9 @@ export const PostForm = () => {
       default:
     };
   }
-  //=======================================================================================================
+  //=========================================================================================================
 
-  //===========================          VALIDATION FORM           ========================================
+  //===========================          VALIDATION FORM           ==========================================
   useEffect(() => {
     if (nameError || textError) {
       setFormValid(false)
@@ -98,9 +98,9 @@ export const PostForm = () => {
       setFormValid(true);
     }
   }, [nameError, textError]);
-  //=======================================================================================================
+  //=========================================================================================================
 
-  //===========================           RENDER JSX           ============================================
+  //===========================           RENDER JSX           ==============================================
   return (
     <form onSubmit={(e) => { submit(e) }} className={stylePostForm.form}>
 
@@ -117,4 +117,4 @@ export const PostForm = () => {
     </form >
   );
 }
-  //=======================================================================================================
+  //=========================================================================================================
