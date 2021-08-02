@@ -21,9 +21,9 @@ function App() {
   const [totalComments, setTotalComments] = useState('');       // total number of comments
   //=======================================================================================================
 
-  // const indexLastComment = currentPage * commentsPerPage;
-  // const indexFirstComment = indexLastComment - commentsPerPage;
-  // const currentComment = comments.slice(indexFirstComment, indexLastComment);
+  // const indexLastComment = currentPage * commentsPerPage;                      //  I guess that the implementation of
+  // const indexFirstComment = indexLastComment - commentsPerPage;                //  pagination should be based on URL,
+  // const currentComment = comments.slice(indexFirstComment, indexLastComment);  //  I can't figure out how to do it
 
   //=======================================================================================================
 
